@@ -1,0 +1,48 @@
+h1{
+  text-align: center;
+  padding:7px;
+}
+.center{
+  height: 100vh;
+  position: relative;
+  background-color: lightyellow;
+}
+.grid_container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 100px 100px 100px;
+  grid-auto-rows: 100px;
+  /* grid-gap: 10px; */
+  color:black;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left:50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+}
+
+/* can ignore styles below; decorative only */
+.grid_container {
+  background-color: lightyellow;
+  /* border: 1px solid #bbb; */
+  padding: 10px;
+  text-align: center;
+  font-size: 80px;
+}
+.grid_item1 {
+  /* background-color: lightgreen; */
+  border-right: 5px solid #ccc;
+  border-bottom: 5px solid #ccc;
+}
+.grid_item2 {
+  /* background-color: lightgreen; */
+  /* border-right: 5px solid #ccc; */
+  border-bottom: 5px solid #ccc;
+}
+.grid_item3 {
+  /* background-color: lightgreen; */
+  border-right: 5px solid #ccc;
+  /* border-bottom: 5px solid #ccc; */
+}

@@ -1,0 +1,33 @@
+.grid_containersm {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 25px 25px 25px;
+    grid-auto-rows: 25px;
+    /* grid-gap: 1px; */
+    color:black;
+    text-align: center;
+    font-size: 20px;
+  }
+  
+  
+  /* can ignore styles below; decorative only */
+  .grid_containersm {
+    background-color: lightyellow;
+    /* border: 3px solid #2fe36b; */
+    padding: 10px;
+  }
+  .grid_item1sm {
+    /* background-color: lightgreen; */
+    border-right: 3px solid #ccc;
+    border-bottom: 3px solid #ccc;
+}
+.grid_item2sm {
+    /* background-color: lightgreen; */
+    /* border-right: 3px solid #ccc; */
+    border-bottom: 3px solid #ccc;
+}
+.grid_item3sm {
+    /* background-color: lightgreen; */
+    border-right: 3px solid #ccc;
+    /* border-bottom: 3px solid #ccc; */
+  }
