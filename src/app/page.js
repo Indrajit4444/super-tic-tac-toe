@@ -1,5 +1,4 @@
 'use client';
-import Image from "next/image";
 import "./grid/grid.css";
 
 import { useState } from "react";
