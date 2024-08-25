@@ -43,41 +43,17 @@ export default function Grid(prop) {
         
         if (!f)
             return;
-        prop.setEl((prev)=>{
-            if (prop.v[e.target.id]!=''){
-                for (let i=0; i<9; i++){
-                    if (prop.v[i]=='')
-                        prev[i]=true;
-                    else prev[i]=false;
-                }
-            }
-            else{
-                for (let i=0; i<9; i++){
-                    prev[i]=false;
-                }
-                prev[e.target.id]=true;
-            }
-            return prev;
-        })
-        let f2=false;
+        let f2=true;
         for (let i=0; i<9; i++){
             if (v[i]==='')
-                f2=true;
+                f2=false;
         }
-        if (!f2){
+        if (f2 && f1===''){
             f1='D';
             // console.log(f2);
         }
         // console.log(f1);
-        f2=true;
-        for (let i=0; i<9; i++){
-            if (prop.el[i])
-                f2=false;
-        }
-        if (f2){
-            prop.setCg("Draws!!");
-        }
-        else if (f1!=''){
+        if (f1!=''){
             prop.sV((prev)=>{//for outer grid
                 let f3='';
                 prev[prop.gn]=f1;
@@ -164,6 +140,30 @@ export default function Grid(prop) {
                 }
                 return prev;
             });
+        }
+        prop.setEl((prev)=>{
+            if (prop.v[e.target.id]!=''){
+                for (let i=0; i<9; i++){
+                    if (prop.v[i]=='')
+                        prev[i]=true;
+                    else prev[i]=false;
+                }
+            }
+            else{
+                for (let i=0; i<9; i++){
+                    prev[i]=false;
+                }
+                prev[e.target.id]=true;
+            }
+            return prev;
+        })
+        f2=true;
+        for (let i=0; i<9; i++){
+            if (prop.v[i]==='')
+                f2=false;
+        }
+        if (f2){
+            prop.setCg("Draws!!");
         }
         // console.log(prop.el);
         if (prop.p==='X')
