@@ -3,11 +3,10 @@ import "./gridsm.css";
 import { useState } from "react";
 export default function Grid(prop) {
     const [v,sv]=useState(['','','','','','','','','']);// inner grid value
-    // const [c,setC]=useState(['black','black','black','black','black','black','black','black','black']);
     function ttc(e){
         if (prop.el[prop.gn]==false)
             return;
-        let f=true, f1='';
+        let f=true, f1='', f4=false; 
         sv((prev)=>{//for inner grid
             if (prev[e.target.id]==='X' || prev[e.target.id]==='O' ){
                 f=false;
@@ -137,14 +136,17 @@ export default function Grid(prop) {
                         return prev;
                     })
                     prop.setCg(f3+" Wins!!");
+                    f4=true;
                 }
                 return prev;
             });
         }
+        if (f4)
+            return;
         prop.setEl((prev)=>{
             if (prop.v[e.target.id]!=''){
                 for (let i=0; i<9; i++){
-                    if (prop.v[i]=='')
+                    if (prop.v[i]==='')
                         prev[i]=true;
                     else prev[i]=false;
                 }
