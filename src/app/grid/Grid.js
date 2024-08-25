@@ -2,7 +2,7 @@
 import "./gridsm.css";
 import { useState } from "react";
 export default function Grid(prop) {
-    const [v,sv]=useState(['','','','','','','','','']);
+    const [v,sv]=useState(['','','','','','','','','']);// inner grid value
     // const [c,setC]=useState(['black','black','black','black','black','black','black','black','black']);
     function ttc(e){
         if (prop.el[prop.gn]==false)
@@ -69,8 +69,16 @@ export default function Grid(prop) {
             // console.log(f2);
         }
         // console.log(f1);
-        if (f1!=''){
-            prop.sV((prev)=>{
+        f2=true;
+        for (let i=0; i<9; i++){
+            if (prop.el[i])
+                f2=false;
+        }
+        if (f2){
+            prop.setCg("Draws!!");
+        }
+        else if (f1!=''){
+            prop.sV((prev)=>{//for outer grid
                 let f3='';
                 prev[prop.gn]=f1;
                 if (prev[0]==prev[1] && prev[1]==prev[2] && prev[0]!='' && prev[0]!='D'){
